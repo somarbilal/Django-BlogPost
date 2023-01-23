@@ -1,0 +1,5 @@
+<form method="post" action="{% url 'edit_post' post_id %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Save">
+</form>

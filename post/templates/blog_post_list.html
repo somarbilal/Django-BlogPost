@@ -1,0 +1,20 @@
+{% comment %} In order to use those templates in your views, you need to configure the settings.py file 
+of your project, by adding the following line: {% endcomment %}
+{% comment %} TEMPLATES = [
+    {
+        ...
+        'APP_DIRS': True,
+        ...
+    },
+] {% endcomment %}
+
+{% comment %} 'DIRS': [os.path.join(BASE_DIR, 'templates')], {% endcomment %}
+
+<!-- blog_post_list.html -->
+{% for post in posts %}
+    <h2>{{ post.title }}</h2>
+    <p>{{ post.body }}</p>
+    <a href="{% url 'blog_post_detail' post.pk %}">Read more</a>
+{% endfor %}
+
+

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %} My Blog {% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+
+<header>
+    <nav>
+        <a href="{% url 'blog_post_list' %}">Blog Posts</a>
+        <a href="{% url 'create_post' %}">Create Post</a>
+    </nav>
+</header>
+
+<main>
+    {% block content %} {% endblock %}
+</main>
+
+<footer>
+    Copyright &copy; {{ current_year }} My Blog
+</footer>
+
+</body>
+</html>
